@@ -35,9 +35,11 @@ export default function fetchCountries(searchQuery) {
           text: "Too many matches found. Please enter a more specific query",
           delay: 2000,
         });
-      } else if (countriesList.length >= 2 && countriesList.length <= 10) {
+      }
+      if (countriesList.length >= 2 && countriesList.length <= 10) {
         createItem(listTemplate, countriesList, countries);
-      } else {
+      }
+      if (countriesList.length === 1) {
         createItem(template, countriesList, countries);
       }
     })
